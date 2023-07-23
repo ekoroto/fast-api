@@ -11,6 +11,7 @@ class UserRequestSchema(BaseUserSchema):
 
 
 class UserResponseSchema(BaseUserSchema):
+    id: int
     created_at: datetime
 
     class Config:

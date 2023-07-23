@@ -1,6 +1,8 @@
 from datetime import datetime
 from pydantic import BaseModel
 
+from .user_schema import UserResponseSchema
+
 
 class BasePostSchema(BaseModel):
     title: str
@@ -16,6 +18,8 @@ class PostResponseSchema(BasePostSchema):
     id: int
     user_id: int
     created_at: datetime
+    user_id: int
+    user: UserResponseSchema
 
     class Config:
         orm_mode = True
