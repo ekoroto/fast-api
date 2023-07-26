@@ -1,9 +1,10 @@
 from fastapi import APIRouter, Depends, status, Response, HTTPException
 from typing import List
 from sqlalchemy.orm import Session
+from sqlalchemy.sql.functions import func
 
 from app.database import get_db
-from app.models import Post
+from app.models import Post, Vote
 from app.oauth2 import get_current_user
 from app.schemas import PostResponseSchema, PostRequestSchema
 
